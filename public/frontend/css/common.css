@@ -1,0 +1,6 @@
+@CHARSET "ISO-8859-1";
+.error{ color: red;}
+.ui-content{ padding: 4px;}
+.ui-icon-fb-connect{ background-image: url("../images/facebook.gif");background-repeat: no-repeat; }
+#flashMessage{ text-align: center;color: green;font-size: 13px;font-weight: bold;}
+.ui-content .ui-listview{margin: -4px;}
