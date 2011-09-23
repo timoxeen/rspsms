@@ -1,5 +1,44 @@
 <div data-role="footer"  > 
-		<h4>copyright @ sendsms2india 2011</h4>
+		<h4><?php
+		$useragent = $_SERVER['HTTP_USER_AGENT'];
+		
+		$matchesArray= array('iPad' => 'Apple iPad',
+							 'Opera'=> 'Opera',
+							 'Chrome' => 'Google Chrome',
+							 'Safari' => 'Safari',
+							 'iPhone OS 4'=> 'iPhone 4',
+							 'iPhone' => 'iPhone',
+							 'Firefox' => 'Firefox',
+							 'HTC_Wildfire' => 'HTC Wildfire',
+							 'HTC Wildfire'=> 'HTC Wildfire',
+							 'HTC Desire' => 'HTC Desire',
+							 'HTC_Desire' => 'HTC Desire',
+							 'Galaxy'	=> 'Samsung Galaxy'
+							 );
+	    $operatingsystemArray= array('Macintosh' => 'Mac','Mac' => 'Mac',
+									 'Windows'=> 'Windows',
+								 );
+	
+	$currentAgent = "copyright @ sendsms2india 2011";				 
+	foreach($matchesArray as $key=>$value)
+	{
+		if(preg_match("/$key/i", $useragent))
+		{
+			$currentAgent = $value;
+			break;
+		}
+	}
+	
+	$currentOs = "";				 
+	foreach($operatingsystemArray as $key=>$value)
+	{
+		if(preg_match("/$key/i", $useragent))
+		{
+			$currentOs = $value;
+			break;
+		}
+	}
+		 print($currentAgent.' '.$currentOs); ?></h4>
 </div>
 </div>
 <!-- Piwik -->
