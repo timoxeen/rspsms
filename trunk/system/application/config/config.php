@@ -12,9 +12,9 @@
 |
 */
 
-$config['base_url'] = "http://sendsms2india.com/";
+//$config['base_url'] = "http://sendsms2india.com/";
 //$config['base_url'] = preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/'; 
-//$config['base_url']	= "http://localhost/CodeIgniter/";
+$config['base_url']	= "http://localhost:8081/";
 
 /*
 |--------------------------------------------------------------------------
