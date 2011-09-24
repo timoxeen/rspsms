@@ -2,13 +2,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
 <title><?=$heading.' &raquo; '.$this->config->item('FAL_website_name')?></title>
-<link href="<?=base_url().$this->config->item('FAL_assets_shared').'/'.$this->config->item('FAL_css');?>/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
 <link href="<?=base_url().$this->config->item('FAL_assets_front').'/'.$this->config->item('FAL_css');?>/common.css" rel="stylesheet" type="text/css" />
-<script src="<?=base_url().$this->config->item('FAL_assets_shared').'/'.$this->config->item('FAL_js');?>/jquery-1.5.min.js" type="text/javascript"></script>
-
+<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
 <script src="<?=base_url().$this->config->item('FAL_assets_front').'/'.$this->config->item('FAL_js');?>/common.js" type="text/javascript"></script>
-
-<script src="<?=base_url().$this->config->item('FAL_assets_shared').'/'.$this->config->item('FAL_js');?>/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
 <script type="text/javascript">
 <!--
 
