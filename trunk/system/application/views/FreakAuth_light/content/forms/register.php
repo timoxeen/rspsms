@@ -134,7 +134,9 @@
 			    	$buttonSubmit = $this->lang->line('FAL_agree_label');
 			    	$buttonCancel = $this->lang->line('FAL_donotagree_label');
 			    	$callConfirm = 'confirmDecline();';
-				?>	
+				?>
+				
+
 				<div data-role="fieldcontain">
 					<textarea name="rules" class="textarea" rows="8" cols="50" readonly="readonly">
 					<?=$this->lang->line('FAL_terms_of_service_message')?>

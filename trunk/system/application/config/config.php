@@ -14,7 +14,7 @@
 
 //$config['base_url'] = "http://sendsms2india.com/";
 //$config['base_url'] = preg_replace('@/+$@','',dirname($_SERVER['SCRIPT_NAME'])).'/'; 
-$config['base_url']	= "http://localhost:8081/";
+$config['base_url']	= "http://192.168.2.3:8085/";
 
 /*
 |--------------------------------------------------------------------------
