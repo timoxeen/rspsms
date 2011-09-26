@@ -17,13 +17,13 @@ if ($item->to_numbers != null || (count($toStatus) <= 1))
 	:
 ?>
 		<li><?php  ?>
-				<h3><a href="#"><?php
+				<h3><?php
  if (empty ($item->to_numbers)) {
 		echo $item->to_list;
 	} else {
-		echo (empty ($item->name)) ?  $item->to_numbers : $item->name;
+		echo (empty ($item->name)) ?  $item->to_numbers : '<a href="tel:'.$item->to_numbers.'">'.$item->name.'</a>';
 	}
-?></a></h3>
+?></h3>
 				<p><strong><?php if($item->status == 0) { echo '<font color="#720091">Pending</font>'; } else if($item->status == 1) { echo '<font color="#FFBC05">Sent</font>'; } else if($item->status == 2) { echo '<font color="#009100">Delivered</font>'; } else if($item->status == 3) { echo '<font color="#D1000A">May not be delivered(DND)</font>'; }else if($item->status == 4) { echo '<font color="#D1000A"> Failed (DND Number) </font>'; }?></strong></p>
 				<p><pre><?php echo $item->message ?></pre></p>
 

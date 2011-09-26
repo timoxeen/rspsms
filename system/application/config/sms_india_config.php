@@ -14,7 +14,7 @@
 $config['SMS_table_prefix'] = 'sms_';
 
 // SMS SEND
-$config['SMS_mobileno_field_validation_smssend'] = 'trim|required|xss_clean';
+$config['SMS_mobileno_field_validation_smssend'] = 'trim|required|xss_clean|numeric|mobile_maxlength';
 $config['SMS_message_field_validation_smssend'] = 'trim|required|xss_clean';
 $config['SMS_fullname_field_validation_smssend'] = 'trim|xss_clean';
 $config['SMS_template_dir'] = 'FreakAuth_light/';

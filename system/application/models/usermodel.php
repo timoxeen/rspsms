@@ -119,7 +119,24 @@ class Usermodel extends Model
 	}
 	
 	// ------------------------------------------------------------------------
+	/**
+	 * Finds the user that requested mobile no is registed or not
+	 * 
+	 * @param varchar $mobileno
+	 * @return array
+	 * @todo change it and make it look for the username instead
+	 * @todo make it throw an error message if results <=0
+	 */
+	function getUserForByMobileNo($mobileno)
+	{
+		//WHERE email = $email
+	    $this->db->where('mobile', $mobileno);
+	    
+	    //SELECT * FROM user
+        return $this->db->get($this->_table);
+	}
 	
+	// ------------------------------------------------------------------------	
 	/**
 	 * Finds the user that requested a password_remind
 	 * after clicking on the reset link
