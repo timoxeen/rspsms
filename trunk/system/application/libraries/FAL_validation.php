@@ -316,6 +316,63 @@ class FAL_validation extends CI_Validation
 		return true;
 	}
 	
+	//--------------------------------------------------------------------
+	
+	function mobile_duplicate_check($value)
+	{
+		//Use the input e-mail and check against 'users' table
+        //query in main user table (users already activated)
+        $query = $this->CI->UserModel->getUserForByMobileNo($value);
+        
+        if (($query != null) && ($query->num_rows() > 0))
+	    {
+	        $this->set_message('mobile_duplicate_check', $this->CI->lang->line('FAL_user_mobile_duplicate'));
+		    return false;
+		}
+		
+        //query in temporary user table (users waiting for activation)
+        //only if registration with email verification
+        if (!$this->CI->config->item('FAL_register_direct'))
+        {
+    		$fields='id';
+            $where=array('mobile'=>$value);
+            $query_temp = $this->CI->UserTemp->getUserTempWhere($fields, $where);
+            
+            if (($query_temp != null) && ($query_temp->num_rows() > 0))
+    	    {
+    	        $this->set_message('mobile_duplicate_check', $this->CI->lang->line('FAL_usertemp_mobile_duplicate'));
+    		    return false;
+    		}
+        }
+        
+		return true;
+	}
+	
+	
+	/**
+	 *  mobile no max length 
+	 */
+	
+	function mobile_maxlength($value)
+	{
+		 $length = strlen($value);
+		if($length < 10)
+		{
+			$this->set_message('mobile_maxlength', $this->CI->lang->line('FAL_user_mobile_length'));	
+		}
+		else 
+		if($length > 10)
+		{
+			$this->set_message('mobile_maxlength', $this->CI->lang->line('FAL_user_mobile_length'));
+		}
+		else
+		{
+			return true;
+		}
+		
+		return false;
+		 
+	}
 	// --------------------------------------------------------------------
 	
     /**

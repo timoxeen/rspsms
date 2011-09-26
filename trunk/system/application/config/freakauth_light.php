@@ -372,7 +372,8 @@ $config['FAL_auto_login_period'] = 60*60*24*30;
   $config['FAL_user_name_field_validation_register'] = $config['FAL_user_name_duplicate_validation'];
   $config['FAL_user_password_field_validation_register'] = $config['FAL_password_required_validation'];
   $config['FAL_user_email_field_validation_register'] = 'trim|required|valid_email|xss_clean|email_duplicate_check';
-  $config['FAL_user_mobileno_field_validation_register'] = 'trim|required|xss_clean';
+  $config['FAL_user_mobileno_field_validation_register'] = 'trim|required|xss_clean|numeric|mobile_maxlength|mobile_duplicate_check';
+  
   $config['FAL_user_country_field_validation_register'] = $config['FAL_country_validation'];
 
  // SECURITY CODE

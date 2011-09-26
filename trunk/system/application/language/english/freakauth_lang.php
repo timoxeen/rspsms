@@ -106,7 +106,9 @@ $lang['FAL_in_use_validation_message'] = 'The %s is already in use.';
 $lang['FAL_country_validation_message'] = 'Please choose the country where you live';
 $lang['FAL_user_email_duplicate'] = 'A user with this e-mail has already registered. If you have forgotten your login details you can get them here.';
 $lang['FAL_usertemp_email_duplicate'] = 'A user with this e-mail has already registered and is waiting for activation. If this is your e-mail address please check your e-mail inbox and activate your account.';
- 
+$lang['FAL_user_mobile_duplicate'] = 'A user with this mobile no has already registered .If you have forgotten your login details you can get them here.';
+$lang['FAL_user_mobile_length'] = 'Mobile number length should not be greater than or less than 10 digits';
+$lang['FAL_usertemp_mobile_duplicate'] = 'A user with this mobile has already registered and is waiting for activation. If this is your A user with this e-mail has already registered and is waiting for activation. If this is your mobile no  please check your mobile inbox and activate your account. please check your mobile inbox and activate your account.';
 //------------------------------------------------------------------
 //CHANGE PASSWORD
 //------------------------------------------------------------------
