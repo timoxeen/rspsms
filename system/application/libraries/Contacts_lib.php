@@ -36,6 +36,34 @@ class Contacts_lib{
 	}
 	function addContact()
 	{
+		$this->CI->load->plugin('gmail_contacts');
+		
+		if(strstr($_SERVER['REQUEST_URI'],'?'))
+		{
+			$tokens = array();
+			$responce = $_SERVER['REQUEST_URI'];
+			$responcearr = explode('?',$responce);
+			if(!empty($responcearr))
+			{
+				$gets = explode('&',$responcearr[1]);
+				if(!empty($gets))
+				{
+					
+					foreach($gets as $value)
+					{
+						$array = explode('=',$value);
+						if(!empty($array))
+						$tokens[$array[0]] = $array[1];
+					}
+				}
+			}
+			
+			$contacts = getContacts($tokens,$this->CI->config->item('SMS_google_ckey'),$this->CI->config->item('SMS_google_csecretkey'),$this->CI->config->item('SMS_google_callbackurl'));
+			$data['contacts'] = $contacts;
+			return $this->CI->load->view($this->CI->config->item('SMS_gcontacts_list_view'), $data, TRUE);
+			die();
+		}
+				
 		$fields['mobileno'] = $this->CI->lang->line('SMS_mobileno_label');
 		$fields['full_name'] = $this->CI->lang->line('SMS_fullname_label');
 		$rules['mobileno'] = $this->CI->config->item('SMS_mobileno_field_validation_smssend');
@@ -60,6 +88,8 @@ class Contacts_lib{
            }
            else
            {
+           
+			$data['gconnect'] = getGoogleConnectLink($this->CI->config->item('SMS_google_ckey'),$this->CI->config->item('SMS_google_csecretkey'),$this->CI->config->item('SMS_google_callbackurl'));
            	return $this->CI->load->view($this->CI->config->item('SMS_contacts_form_view'), $data, TRUE);
            }
 		

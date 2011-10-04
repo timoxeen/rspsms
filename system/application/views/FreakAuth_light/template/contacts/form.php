@@ -34,3 +34,7 @@
 	))?>
 	</div>
 <?=form_close(); ?>
+
+<?php 
+echo $gconnect;
+?>
