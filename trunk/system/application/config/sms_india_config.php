@@ -21,9 +21,14 @@ $config['SMS_template_dir'] = 'FreakAuth_light/';
 $config['SMS_send_view'] = $config['SMS_template_dir'].'template/sms/send';
 $config['SMS_sent_list_view'] = $config['SMS_template_dir'].'template/sms/sent';
 $config['SMS_contacts_list_view'] = $config['SMS_template_dir'].'template/contacts/list';
+$config['SMS_gcontacts_list_view'] = $config['SMS_template_dir'].'template/contacts/glist';
 $config['SMS_contacts_form_view'] = $config['SMS_template_dir'].'template/contacts/form';
 $config['SMS_contacts_menu_view'] = $config['SMS_template_dir'].'content/topmenu';
 $config['SMS_fb_logout_uri'] = 'auth/fblogout';
+
+$config['SMS_google_ckey'] = 'sendsms2india.com';
+$config['SMS_google_csecretkey'] = '4dA0w3hecnHRQ4bPJJgiCzj9';
+$config['SMS_google_callbackurl'] = 'http://localhost:8081/contacts/add.html';
 
 
 ?>
