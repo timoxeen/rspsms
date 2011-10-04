@@ -37,7 +37,7 @@
 |
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
-
+session_start();
 $autoload['libraries'] = array('database', 'Freakauth_light','db_session','facebook_connect');
 
 
